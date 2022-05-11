@@ -19,13 +19,17 @@
     <div class="add-book-form-container">
         <form action="javascript:void(0)">
             <div>
-                <label for="title">Title</label><input id="title" type="text">
+                <label for="title">Title</label><input id="title" name="title" type="text" minlength="1" maxlength="50">
             </div>
             <div>
-                <label for="author">Author</label><input id="author" type="text">
+                <label for="author">Author</label><input id="author" name="author" type="text" minlength="1" maxlength="50">
             </div>
             <div>
-                <label for="pages">Pages</label><input id="" typepages="text">
+                <label for="pages">Pages</label><input id="pages" name="pages" type="number" min="0" max="9999">
+            </div>
+            <div>
+                <input type="checkbox" id="read" name="readornot" checked>
+                <label for="read">Read</label>
             </div>
             <!-- checkbox for read or not -->
             <button type="submit">Add Book</button>
