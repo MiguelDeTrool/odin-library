@@ -12,6 +12,27 @@ let myLibrary = {
 
 const bookDisplay = document.querySelector(".book-display");
 
+class Book {
+
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    info() {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ` + (this.read ? "read." : "not read yet."); //This line will only work if I can use ternary operator and concatenation after a return like this. Might need parentheses. 
+    }
+
+    toggleRead() {
+        this.read = !this.read;
+        refreshDisplay(myLibrary, bookDisplay);
+    }
+}
+
+/* ------ REFACTOR FROM HERE ------ //
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -27,6 +48,9 @@ Book.prototype.toggleRead = function() {
     this.read = !this.read;
     refreshDisplay(myLibrary, bookDisplay);
 };
+
+
+// ------ TO HERE ------ */
 
 function clearTable(table) {
     for (let i = table.rows.length - 1; i > 0; i--) {
